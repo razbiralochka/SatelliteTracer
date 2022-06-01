@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>943</width>
+    <height>842</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Построение трассы КА ДЗЗ</string>
+  </property>
+  <widget class="QWidget" name="main">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="4">
+     <widget class="QLineEdit" name="lnLatitudeOO">
+      <property name="text">
+       <string>44.5622</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="lnArgPer">
+      <property name="text">
+       <string>-24</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3" colspan="2" alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="label_14">
+      <property name="text">
+       <string>Координаты НППИ</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lnInclination">
+      <property name="text">
+       <string>67</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="label_19">
+      <property name="text">
+       <string>Количество попаданий на ОН</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="label">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Параметры орбиты</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="6">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Скорость отрисовки</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="lnPerigos">
+      <property name="text">
+       <string>5000</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2" colspan="3">
+     <widget class="QPushButton" name="pbPlot">
+      <property name="text">
+       <string>Построить трассу</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QLabel" name="label_15">
+      <property name="text">
+       <string>Долгота, град</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="7">
+     <widget class="QLineEdit" name="ln_lgs"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Угол наклонения (i), град</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QLineEdit" name="ln_loo"/>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLineEdit" name="lnOmega">
+      <property name="text">
+       <string>15</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Высота перигея (Hp), км</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Долгота, град</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Долгота восходящего узла (Ω), град</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3" colspan="2" alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string>Координаты объекта наблюдения</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QLineEdit" name="lnLongitudeOO">
+      <property name="text">
+       <string>38.0848 </string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_17">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Показатель периодичности&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;наблюдения, мин&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="7">
+     <widget class="QDoubleSpinBox" name="sbStep">
+      <property name="decimals">
+       <number>1</number>
+      </property>
+      <property name="minimum">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>200.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="value">
+       <double>100.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0" colspan="8">
+     <widget class="PlotWidget" name="pwPlot"/>
+    </item>
+    <item row="11" column="5" colspan="2">
+     <widget class="QLabel" name="label_18">
+      <property name="text">
+       <string>Показатель оперативности, мин</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="6" colspan="2" alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="label_13">
+      <property name="text">
+       <string>Настройки</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QLabel" name="label_16">
+      <property name="text">
+       <string>Широта, град</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="7">
+     <widget class="QSpinBox" name="sbNCoils">
+      <property name="value">
+       <number>2</number>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4">
+     <widget class="QLineEdit" name="lnLongitudeGSRI">
+      <property name="text">
+       <string>50.15</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLineEdit" name="ln_too"/>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Аргумент перигея (ω), град</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="6" column="4">
+     <widget class="QLineEdit" name="lnLatitudeGSRI">
+      <property name="text">
+       <string>53.2001</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Количество витков</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>Широта, град</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="7">
+     <widget class="QLineEdit" name="ln_tgs"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Высота апогея (Ha), км</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lnApofis">
+      <property name="text">
+       <string>6000</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="6">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Шаг</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="7">
+     <widget class="QSlider" name="sldDrowV">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="sliderPosition">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="5" colspan="2">
+     <widget class="QLabel" name="label_20">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Количество операций&lt;/p&gt;&lt;p&gt;передачи информации&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0" colspan="8">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
