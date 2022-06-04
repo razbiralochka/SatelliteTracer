@@ -30,17 +30,18 @@ class EllipseItem(pg.GraphicsObject):
         self.center = center
         self.radius1 = radius1
         if radius2 == None:
-            self.radius2 = radius1 
-        else: 
+            self.radius2 = radius1
+        else:
             self.radius2 = radius2
         self.color = color
         self.generatePicture()
 
     def generatePicture(self):
+
         self.picture = QtGui.QPicture()
         p = QtGui.QPainter(self.picture)
         p.setPen(pg.mkPen(self.color))
-        p.drawEllipse(self.center[0], self.center[1], self.radius1 * 2, self.radius2 * 2)
+        p.drawEllipse(QtCore.QPoint(int(self.center[0]),int(self.center[1])), self.radius1 * 2, self.radius2 * 2)
         p.end()
 
     def paint(self, p, *args):
