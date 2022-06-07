@@ -4,8 +4,8 @@ import pyqtgraph as pg
 from main import Ui_MainWindow
 import sys
 import pyqtgraphutils as pgutils
- 
- 
+
+
 class mywindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(mywindow, self).__init__()
@@ -40,7 +40,7 @@ class mywindow(QtWidgets.QMainWindow):
     def plot_settings(self):
         '''
         Установка параметров для графика
-        '''      
+        '''
         bottom_plot = pg.AxisItem('bottom', pen=0.0, textPen=0.0)
         left_plot = pg.AxisItem('left', pen=0.0, textPen=0.0)
         top_plot = pg.AxisItem('top', pen=0.0, textPen=0.0)
@@ -64,7 +64,7 @@ class mywindow(QtWidgets.QMainWindow):
 
         self._img = pg.ImageItem(imgArray)
         self.set_img()
-    
+
     def set_img(self):
         '''
         Установка карты на фон
@@ -123,7 +123,7 @@ class mywindow(QtWidgets.QMainWindow):
 
         object_observation = pgutils.EllipseItem([lmoo-1, fioo-1], 1, color=(0, 0, 0))
         text_oo = pg.TextItem(text='Объект наблюдения', color=(0, 0, 0))
-        
+
         ground_station = pgutils.EllipseItem([lmgs-1, figs-1], 1, color='r')
         text_gs = pg.TextItem(text='НППИ', color='r')
 
@@ -185,13 +185,13 @@ class mywindow(QtWidgets.QMainWindow):
 
             tzv = 1.00273791*self.t
             msr = tzv*(mu/a**3)**.5
-            
+
             e0[0] = msr+e*np.sin(msr)+(e*e/2)*np.sin(2*msr)
             e0[1] = e**3/24*(9*np.sin(3*msr)-3*np.sin(msr))
             e0[2] = e**4/(24*8)*(64*np.sin(4*msr)-32*np.sin(2*msr))
             e0[3] = e**5/(120*16)*(625*np.sin(5*msr)+5*81*np.sin(3*msr)+10*np.sin(msr))
             e0[4] = e**6/(720*32)*(36*36*6*np.sin(6*msr)-6*256*4*np.sin(4*msr)+15*32*np.sin(2*msr))
-            
+
             E = sum(e0)
 
             sint = (1-e**2)**.5*np.sin(E)/(1-e*np.cos(E))
@@ -236,11 +236,11 @@ class mywindow(QtWidgets.QMainWindow):
 
             self.x.append(np.rad2deg(lm))
             self.y.append(np.rad2deg(fi))
-            
+
             self.ui.pwPlot.plot(x=self.x, pen=None, y=self.y, symbol='o', symbolPen=None, symbolSize=3, symbolBrush=.0, clear=True)
             gss = pg.PlotDataItem(x=lmgss, pen=None, y=figss, symbol='o', symbolPen=None, symbolSize=3, symbolBrush='r')
             self.ui.pwPlot.addItem(gss)
-            
+
             if abs(np.arccos(np.sin(fi)*np.sin(np.deg2rad(fioo))+np.cos(fi)*np.cos(np.deg2rad(fioo))*np.cos(np.deg2rad(lmoo)-lm))) < alpha:
                 self.zones.append(pgutils.EllipseItem([np.rad2deg(lm)-y, np.rad2deg(fi)-y], y, color=(0, 0, 0)))
                 if self.catch_oo == False:
@@ -252,7 +252,7 @@ class mywindow(QtWidgets.QMainWindow):
                     self.catch_oo = False
                     self.tk_oo = self.t
                     self.t_oo += self.tk_oo-self.ts_oo
-            
+
             if abs(np.arccos(np.sin(np.deg2rad(figs))*np.sin(fi)+np.cos(np.deg2rad(figs))*np.cos(fi)*np.cos(lm-np.deg2rad(lmgs)))) < alphazr:
                 if self.catch_gs == False:
                     self.catch_gs = True
@@ -274,12 +274,12 @@ class mywindow(QtWidgets.QMainWindow):
             if len(self.zones) != 0:
                 for zone in self.zones:
                     self.ui.pwPlot.addItem(zone)
-            
+
             self.t += dt
             if self.t > (Ts+100)*nvitkov:
                 self.timer.stop()
                 self.ui.ln_loo.setText(str(int(self.l_oo)))
-                self.ui.ln_too.setText(str(round(self.t_oo/self.l_oo/60, 3)))
+                self.ui.ln_too.setText(str(round(self.t_oo/self.l_oo/1, 3)))
                 self.ui.ln_lgs.setText(str(int(self.l_gs)))
                 self.ui.ln_tgs.setText(str(round(self.t_gs/self.l_gs/60, 3)))
 
