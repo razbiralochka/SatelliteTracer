@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Maxim_Nefedov\OneDrive - Samara University\Учёба 8 семестр\ОКСПиМРКТ\Path KA\main.ui'
+
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
